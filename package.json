@@ -1,0 +1,15 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "API teste para chatbot, dialogflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node.js",
+    "chatbot"
+  ],
+  "author": "Mariana Santos (mariana.aparecida14@gmail.com)",
+  "license": "ISC"
+}
