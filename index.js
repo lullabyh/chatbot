@@ -18,6 +18,6 @@ app.post('/mensagem', (req, res) => {
 //GERAR UMA PORTA EM QUE IRÁ RODAR O NODE
 const porta = process.env.PORT || 3000;
 
-app.listen(porta,'127.0.0.1', () =>{
+app.listen(porta, () =>{
     console.log('Servidor node rodando!');
 } )
