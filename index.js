@@ -2,16 +2,31 @@
 const express  =  require("express");
 //importa BodyParser
 const bodyParser = require("body-parser");
+//instanciar o express que fará requisicoes HTTP
 const app = express();
-app.use(bodyParser.urlencoded({extended: false}))
+//aceitar requisicoes POST
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json);
 
 app.get('/', (req, res) => {
     res.send('Olá Mundo');
 })
 
 app.post('/mensagem', (req, res) => {
-    console.log(req)
-    res.send("mensagem recebida." + req.body.msg);
+    console.log("Rota pro webhook");
+
+    const resposta = {
+        "fulfillmentMessages": [
+            {
+            "text": {
+                "text": [
+                "Text response from webhook"
+                ]
+            }
+            }
+        ]
+    }
+    res.send(resposta);
 })
 
 
