@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const app = express();
 //aceitar requisicoes POST
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json);
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.send('Olá Mundo');
@@ -30,7 +30,7 @@ app.post('/mensagem', (req, res) => {
 })
 
 
-//GERAR UMA PORTA EM QUE IRÁ RODAR O NODE
+//GERA PORTA EM QUE IRÁ RODAR O NODE
 const porta = process.env.PORT || 3000;
 
 app.listen(porta, () =>{
