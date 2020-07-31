@@ -9,10 +9,21 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('Olá Mundo');
+    const resposta = {
+        "fulfillmentMessages": [
+            {
+            "text": {
+                "text": [
+                "Text response from webhook"
+                ]
+            }
+            }
+        ]
+    }
+    res.send(resposta);
 })
 
-app.post('/mensagem', (req, res) => {
+app.post('/', (req, res) => {
     console.log("Rota pro webhook");
 
     const resposta = {
@@ -20,7 +31,7 @@ app.post('/mensagem', (req, res) => {
             {
             "text": {
                 "text": [
-                "Text response from webhook"
+                "Horário de 08:00 as 22:00 de Segunda a Sexta"
                 ]
             }
             }
